@@ -1,0 +1,132 @@
+---
+layout: post
+title: First look at Montreal trees
+---
+
+
+Montreal's Portail [donnees ouvertes](http://donnees.ville.montreal.qc.ca)
+contains lot's of data about the city's infrastructure, economy, administration
+and many resources.  One interesting data set is about the public trees divided
+by neigborhood.  It's in csv format including the coordinates so it's perfect
+for playing with pandas and trying the mapping-related modules.
+
+
+    import pandas as pd
+    csvfile = '/Users/jfr/projects/arbremtl/data/L2P_801_15052013_LePlateau-Mont-Royal.csv'
+    df = pd.read_csv(csvfile, sep=";")
+
+##Data overview
+
+Since the data comes in neighborhood files, I will start with the (in)famous
+Plateau Mont-Royal (as selected above). Let's explore it with pandas.  To have a
+feel of the available information, I look at the first 2 rows.
+
+
+    df.head(n=2)
+
+
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Invent</th>
+      <th>Arrond</th>
+      <th>Nom_arrond</th>
+      <th>Rue</th>
+      <th>C�t�</th>
+      <th>No_Civiq</th>
+      <th>No_empl</th>
+      <th>Type_empl</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Sigle</th>
+      <th>Essence_Latin</th>
+      <th>Essence_Fran�ais</th>
+      <th>Essence_Anglais</th>
+      <th>DHP</th>
+      <th>Date_prise</th>
+      <th>Date_plant</th>
+      <th>Propri�t�</th>
+      <th>Remarquable</th>
+      <th>Dist_pav�</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> H</td>
+      <td> 5</td>
+      <td> Le Plateau-Mont-Royal</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td> 2</td>
+      <td>         TRottoir</td>
+      <td> 299130.596</td>
+      <td> 5041570.5</td>
+      <td> ACPLCO</td>
+      <td> Acer platanoides 'Columnare'</td>
+      <td> �rable de Norv�ge colonnaire</td>
+      <td> Columnare Norway Maple</td>
+      <td> 5</td>
+      <td> 2004-06-16</td>
+      <td> 2004-06-16</td>
+      <td> Ville</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> H</td>
+      <td> 5</td>
+      <td> Le Plateau-Mont-Royal</td>
+      <td> NaN</td>
+      <td> NaN</td>
+      <td>NaN</td>
+      <td> 4</td>
+      <td> Fond de Trottoir</td>
+      <td> 299169.310</td>
+      <td> 5041613.5</td>
+      <td> ACPLCO</td>
+      <td> Acer platanoides 'Columnare'</td>
+      <td> �rable de Norv�ge colonnaire</td>
+      <td> Columnare Norway Maple</td>
+      <td> 5</td>
+      <td> 2007-05-28</td>
+      <td>        NaN</td>
+      <td> Ville</td>
+      <td> N</td>
+      <td>NaN</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 27 columns</p>
+</div>
+
+
+
+The number of column will tell how many (public) trees
+
+
+    len(df)
+    18100
+
+
+
+So there are 18100 trees in this neighborhood which translate into about 5.5
+inhabitants or 448m^2 for every trees. This will be interesting to compared with
+other neighborhoods. To find out how many different trees, I use the unique
+method:
+
+
+    len(pd.unique(df.Essence_Latin.ravel()))
+    190
+
+That is a lot of different kinds of tree, more than I can name for sure.
+Next step, mapping.
