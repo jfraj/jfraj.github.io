@@ -1,0 +1,106 @@
+---
+layout: post
+title: "Mapping Montreal's trees"
+---
+
+
+Now that I have had a first look at the data, it's time to have a visual idea of
+the tree distributions. Let's load the data again.
+
+
+    import pandas as pd
+    csvfile = '/Users/jfr/projects/arbremtl/data/L2P_801_15052013_LePlateau-Mont-Royal.csv'
+    df = pd.read_csv(csvfile, sep=";")
+
+
+    Now that I have had a first look at the data, it's time to have a visual idea of the tree distributions.
+    According to the [data description](http://donnees.ville.montreal.qc.ca/dataset/arbres/resource/41522593-fe4a-4276-a2c0-a05f4016f756), the coordinates are in mercator NAD:1983. Mercator is a common projection for world map (the one in my room is "modified mercator") which does not preserve area but does preserve the directions and shape(locally).  The NAD:1983 (North American Datum) defines the reference system and a set of reference points.  Let's load the data.
+
+##Translating coordinates into longitude-latitudes
+Although I would not be surprised that most mapping software can work with this
+reference system, I have decided to translate it in common longitude-latitude.
+To do this, I use pyproj:
+
+
+    from pyproj import Proj
+
+To use pyproj, I think I have to use its other name EPSG:32188 found on this
+[page](http://www.spatialreference.org/ref/epsg/nad83-mtm-zone-8/).
+
+
+    p = Proj(init="EPSG:32188")
+
+If this projection is the right one, getting the longitude and latitude of the
+first tree should give something close to montreal coordinates: 45°30′N 73°34′W
+according to [wikipedia](http://en.wikipedia.org/wiki/Montreal).
+
+
+    p(299130.596, 5041570.5,inverse=True)
+
+
+
+
+    (-73.57256295216642, 45.51403106844013)
+
+
+
+Fine.  Now let's make two pandas series one longitude one latitude
+
+
+    sx, sy = df['X'],df['Y']
+    lnglat = []
+    for ix,iy in zip(sx, sy):
+        lnglat.append(p(ix, iy, inverse=True))
+
+##Plotting with basemap
+Installation went without problem following these
+[instructions](http://matplotlib.org/basemap/users/installing.html).
+
+
+    %matplotlib inline
+    from mpl_toolkits.basemap import Basemap
+    import matplotlib.pyplot as plt
+
+Here is a function that returns a Basemap object centered around montreal
+
+
+    def basic_mtl_map(ax=None, lllat=45.2, urlat=45.8,lllon=-74.5, urlon=-73.0):
+    #def basic_mtl_map(ax=None, lllat=45.5, urlat=45.56,lllon=-73.62, urlon=-73.53):
+        # Create polar stereographic Basemap instance
+        m = Basemap(ax=ax, projection='stere',lon_0=(urlon + lllon)/2.0, lat_0=(urlat + lllat)/2.0,
+                    llcrnrlat=lllat, urcrnrlat=urlat, llcrnrlon=lllon, urcrnrlon=urlon,resolution='h')
+        m.drawcoastlines()
+        return m
+
+Now let's plot the positions of all the trees
+
+
+    fig1 = plt.figure(figsize=(10,8))
+    mtlmap = basic_mtl_map()
+    x,y = mtlmap(*zip(*lnglat))
+    plot1 =mtlmap.plot(x,y,'k.', alpha=0.5)
+
+
+![png](_posts/mapmtltrees_files/mapmtltrees_16_0.png)
+
+
+With so many trees (18100), we can only see a black stay with the shape of the
+Plateau.
+Let'have a closer look by changing the map limits:
+
+
+    fig2 = plt.figure(figsize=(10,8))
+    mtlmap2 = basic_mtl_map(None, lllat=45.5, urlat=45.56,lllon=-73.62, urlon=-73.53)
+    x2,y2 = mtlmap2(*zip(*lnglat))
+    plot2 =mtlmap2.plot(x2,y2,'k.', alpha=0.5)
+
+
+![png](_posts/mapmtltrees_files/mapmtltrees_18_0.png)
+
+
+We start to see some structures like the streets and the Parc Lafontaine on the
+right.  And I can't help noticing that the plateau limits are similar to a piano
+top.  The next step would be to plot this on top of some better map as done
+[here](http://stevendkay.wordpress.com/tag/basemap/) in order to have a better
+idea of the position in the city and have a color code for the different kinds
+of tree... but that will be for another post!
