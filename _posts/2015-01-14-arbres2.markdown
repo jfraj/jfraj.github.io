@@ -81,7 +81,7 @@ Now let's plot the positions of all the trees
     plot1 =mtlmap.plot(x,y,'k.', alpha=0.5)
 
 
-![png]({{site.url}}/assets/mapmtltrees_files/mapmtltrees_16_0.png)
+![png]({{jfraj.github.io}}/assets/mapmtltrees_files/mapmtltrees_16_0.png)
 
 
 With so many trees (18100), we can only see a black stay with the shape of the
