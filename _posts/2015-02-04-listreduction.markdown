@@ -20,8 +20,7 @@ value lists of variable length.  Here is an example:
     3         16 17 18 19 20
 
 
-My first take was to turn them into a list with a split, but data frame do not
-accept list as elements:
+My first take was to turn them into a list with a split:
 
 
     df['c1AsList'] = df['c1'].apply(lambda s: s.split())
