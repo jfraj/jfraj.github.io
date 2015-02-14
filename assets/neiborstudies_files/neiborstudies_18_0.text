@@ -1,0 +1,31 @@
+        geoname  \
+geoname           
+Canada   Canada   
+A0A         A0A   
+A0B         A0B   
+A0C         A0C   
+A0E         A0E   
+
+        Incompletely enumerated Indian reserves and Indian settlements, 2011  \
+geoname                                                                        
+Canada                                                   T                     
+A0A                                                    NaN                     
+A0B                                                    NaN                     
+A0C                                                    NaN                     
+A0E                                                    NaN                     
+
+         population2011  Total private dwellings, 2011  \
+geoname                                                  
+Canada         33476688                       14569633   
+A0A               46297                          23950   
+A0B               20985                          12585   
+A0C               12834                           8272   
+A0E               23384                          12733   
+
+         Private dwellings occupied by usual residents, 2011  
+geoname                                                       
+Canada                                            13320614    
+A0A                                                  18701    
+A0B                                                   8854    
+A0C                                                   5482    
+A0E                                                   9659    

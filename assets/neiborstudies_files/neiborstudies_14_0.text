@@ -1,0 +1,13 @@
+  streetnum                streetname             city province postalcode  \
+0     12208      boul René-Lévesque O         Montréal       QC     H3H1R6   
+1     27-50           boul Crémazie O         Montréal       QC     H2P1A2   
+2      7031   ch de la cote-Saint-Luc   Cote Saint-Luc       QC     H4V1J2   
+3      8130            boul Champlain          Lasalle       QC     H8P1B4   
+4        26          av Westminster N   Montréal-Ouest       QC     H4X1Z2   
+
+      arrondissement geoname  
+0  Downtown Montreal     H3H  
+1           Villeray     H2P  
+2     Côte Saint-Luc     H4V  
+3            LaSalle     H8P  
+4      Montreal West     H4X  

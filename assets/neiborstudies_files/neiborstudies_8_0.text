@@ -1,0 +1,13 @@
+   streetnum              streetname       city province postalcode  \
+0       1954   boul de Maisonneuve E   Montréal       QC     H2L1Z1   
+1      31175           rue Ontario E   Montréal       QC     H2L1R3   
+2       4554        rue Jean-Talon O   Montréal       QC     H3N1R5   
+3      56001             av Victoria   Montréal       QC     H3W2R9   
+4       6504          rue Beaubien E   Montréal       QC     H2S1S5   
+
+    arrondissement geoname  
+0       Centre-Sud     H2L  
+1       Centre-Sud     H2L  
+2   Parc-Extension     H3N  
+3  Côte-des-Neiges     H3W  
+4    Petite-Patrie     H2S  
