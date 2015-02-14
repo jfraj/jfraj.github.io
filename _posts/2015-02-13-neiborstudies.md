@@ -55,8 +55,6 @@ Let's first turn the csv file into a data frame
 
 
     dfpawn = pd.read_csv('pawnmtl.csv')
-
-
     dfpawn.head()
 
 
@@ -123,10 +121,6 @@ Let's first turn the csv file into a data frame
 
 
     dfpawn.shape
-
-
-
-
     (59, 7)
 
 
@@ -448,14 +442,7 @@ Let's now compare the distribution of the bank and the pawnshop density.
 
     _ = dfarrsum[['bankdensity', 'pawnshopdensity']].plot(kind='bar', figsize=(16,6), ylim=[0.000001, 0.0005], 
                                                           color=['b', 'r'], label = ['Bank density', 'Pawn shop density'])
-    plt.legend(loc='best')
-
-
-
-
-    <matplotlib.legend.Legend at 0x1094a0a10>
-
-
+    _ = plt.legend(loc='best')
 
 
 ![png]({{jfraj.github.io}}/assets/neiborstudies_files/neiborstudies_22_1.png)
