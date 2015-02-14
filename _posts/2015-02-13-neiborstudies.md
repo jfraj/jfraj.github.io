@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Banks and Pawn Shops in Montreal's arrondissement
+title: Banks and Pawn shops in Montreal's arrondissements
 ---
 
 During a meeup of MtlData, a question was asked if there was any way to know the
@@ -426,34 +426,6 @@ to geoname for convenience.
 
 
 
-
-    #dftest = pd.concat([dfpop, dfpawngeo, dfbankgeo], axis=1,join='outer')
-
-
-    #dftest['pawndensity'] = dftest['pawnshops']/dftest['population2011']
-    #dftest['bankdensity'] = dftest['banks']/dftest['population2011']
-
-
-    #dftest = dftest.sort(columns=['pawndensity'])
-
-
-    #dftest['arrondissement'] = dftest['geoname'].apply(lambda p: cpdic[p] if p in cpdic.keys() else None)
-
-
-    #dftest[dftest['bankdensity'].notnull()].plot(kind='scatter', x='pawndensity', y='bankdensity', 
-    #                                             xlim=[-0.00005, 0.00025], ylim=[-0.0001, 0.001])
-
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x107aef550>
-
-
-
-
-![png]({{jfraj.github.io}}/assets/neiborstudies_files/neiborstudies_23_1.png)
-
-
 ##Merging the data sets
 I put everything in the same data frame to make the comparison of the pawn shop
 and bank distributions.  I create two new columns, "bankdensity" and
@@ -486,7 +458,7 @@ Let's now compare the distribution of the bank and the pawnshop density.
 
 
 
-![png]({{jfraj.github.io}}/assets/neiborstudies_files/neiborstudies_27_1.png)
+![png]({{jfraj.github.io}}/assets/neiborstudies_files/neiborstudies_22_1.png)
 
 
 Clearly, there are more pawn shops when there are fewer banks.  The nature of
