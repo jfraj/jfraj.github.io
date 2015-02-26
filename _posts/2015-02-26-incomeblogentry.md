@@ -121,7 +121,7 @@ Let's look at all the cities' average income to have an idea of the data sets
     _ = logsubplt.text(100000, 100, 'Vertical\nlog scale', fontsize=25, color='Red')
 
 
-![png](incomeblogentry_files/incomeblogentry_8_0.png)
+![png]({{jfraj.github.io}}/assets/incomeblogentry_files/incomeblogentry_8_0.png)
 
 
 Both plot above contain the same data, but the one on the right has a
@@ -238,7 +238,7 @@ Now let's see how the subset of cities compares with the full sample.
     _ = logsubselplt.text(100000, 100, 'Vertical\nlog scale', fontsize=25, color='Red')
 
 
-![png](incomeblogentry_files/incomeblogentry_16_0.png)
+![png]({{jfraj.github.io}}/assets/incomeblogentry_files/incomeblogentry_16_0.png)
 
 
 So the cluster of low income still remains for reasonably populated cities in
