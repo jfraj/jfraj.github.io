@@ -1,0 +1,8 @@
+[{u'groups': [{u'count': 10,
+    u'group': u'concept',
+    u'weight': 0.141631171057803}],
+  u'item': u'couple'},
+ {u'groups': [{u'count': 1,
+    u'group': u'category',
+    u'weight': 0.0635425122097419}],
+  u'item': u'montreal'}]
