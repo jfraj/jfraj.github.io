@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First look at hackingCBCMTL data"
+title: On canadian solitudes
 ---
 
 This weekend I will be attending
@@ -116,7 +116,6 @@ recovered with grouping by *storyId*.
     news_items = pd.concat(news_items, ignore_index=True)
 
 
-
 How much bigger is the sample now?
 
 
@@ -210,7 +209,7 @@ weight is between 0 and 1:
     _ = plt.ylabel('number of items')
 
 
-![png]{{jfraj.github.io}}/assets/hackingcbcmtl_files/data_first_look_18_0.png)
+![png]({{jfraj.github.io}}/assets/data_first_look_files/data_first_look_18_0.png)
 
 
 ##Groups
@@ -391,7 +390,7 @@ Let's first look at raw counts of the most impotant
     _ = plt.ylabel('')
 
 
-![png]({{jfraj.github.io}}/assets/hackingcbcmtl_files/data_first_look_files/data_first_look_59_0.png)
+![png]({{jfraj.github.io}}/assets/data_first_look_files/data_first_look_59_0.png)
 
 
 
@@ -403,7 +402,7 @@ Let's first look at raw counts of the most impotant
     _ = plt.title('Importance in 2014 news')
 
 
-![png]({{jfraj.github.io}}/assets/hackingcbcmtl_files/data_first_look_files/data_first_look_60_0.png)
+![png]({{jfraj.github.io}}/assets/data_first_look_files/data_first_look_60_0.png)
 
 
 
@@ -412,7 +411,7 @@ Let's first look at raw counts of the most impotant
     _ = plt.title('Company importance in 2014 news')
 
 
-![png]({{jfraj.github.io}}/assets/hackingcbcmtl_files/data_first_look_files/data_first_look_61_0.png)
+![png]({{jfraj.github.io}}/assets/data_first_look_files/data_first_look_61_0.png)
 
 
 Obviously, the data needs to be cleaned: *magnotta* is not a company and
