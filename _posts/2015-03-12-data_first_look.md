@@ -1,6 +1,6 @@
 ---
 layout: post
-title: On canadian solitudes
+title: First look at HackingCBCMTL data
 ---
 
 This weekend I will be attending
