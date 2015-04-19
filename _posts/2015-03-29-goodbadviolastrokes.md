@@ -4,7 +4,7 @@ title: Classifying pro vs mediocre viola players
 ---
 
 
-Musicians and experienced music lovers can detect good and bad players very quickly. It is as if they have acces to hidden channels while the rest of us are deaf to finess. I sometimes feel like there is this rich and colorful world behind the music that is out of my reach like the pot-of-gold at the end of a rainbow, a frustration only akin to the [eye-killing autostereograms](https://www.youtube.com/watch?v=ArWY-Ck-CPc).  A reasonable way to fix this handicap would be to train myself by listen to more music, who knows, this could be an edifying experience.  But maybe a computer can do it for me.
+Musicians and experienced music lovers can detect good and bad players very quickly. It is as if they have acces to hidden channels while the rest of us are deaf to finess. I sometimes feel like there is this rich and colorful world behind the music that is out of my reach like the pot-of-gold at the end of a rainbow, a frustration only akin to the [eye-killing autostereograms](https://www.youtube.com/watch?v=ArWY-Ck-CPc).  A reasonable way to fix this handicap would be to train myself by listening to more music, who knows, this could be an edifying experience.  But maybe a computer can do it for me.
 Here I try to use unsupervised clustering to distinguish a professional viola player ([Marina](http://www.marinathibeaultviola.com)) from a mediocre one (me). For simplicity, the comparison is performed with only one type of stroke on the viola's highest pitch string (A).
 
 A lot of the code below was inspired (sometimes copy-pasted) from Steve Tjoa's [Music Information Retrieval workshop tutorial](https://github.com/stevetjoa/stanford-mir).
