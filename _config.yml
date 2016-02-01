@@ -2,7 +2,7 @@
 title: jfraj's blog
 email: rajotte.jeanfrancois@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I'm a physicist turning data scientist
+  I'm a physicist turned data scientist
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jf_raj
@@ -10,3 +10,8 @@ github_username:  jfraj
 
 # Build settings
 markdown: kramdown
+
+redcarpet:
+    extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+
+highlighter: pygments
